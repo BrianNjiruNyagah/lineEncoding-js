@@ -1,0 +1,22 @@
+function lineEncoding(s) {
+    //arr helps to check word for word how the characters repeat themselves
+    let arr = s.split('');
+    //stores the encoded strings in bunches
+    let word = [] ;
+    let count = 1;
+    //loops through checking how many characters in the strings equate to one another
+    for(let x = 0;x!=s.length;x++){
+        if(arr[x] == arr[x+1]){
+            count++;
+            }
+        if(arr[x] != arr[x+1]){
+            if(count > 1){
+                word.push(count+arr[x]);
+            }else{
+                word.push(arr[x]);
+            }
+            count = 1;
+        }
+    }
+    return word.join('');
+}
